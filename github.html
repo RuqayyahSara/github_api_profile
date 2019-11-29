@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Git Hub users</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+<nav>
+<div class="nav-wrapper" >   
+<a href="#!" class="breadcrumb" style="font-size:30px;">&nbsp;&nbsp;GitHub User Search</a>
+<a href="https://github.com/RuqayyahSara/battery_status_demo" style="margin-left:1020px;font-size: 50px;"><i class="fa fa-github"></i></a>
+    </div>
+</nav>   
+<br><br>
+
+<div class="row">
+    <form class="col s12" style="margin-left:350px;">
+          <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix" >account_circle</i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="username">Enter Username </label>
+                <button  onclick="getName(document.getElementById('icon_prefix').value)" class="button is-primary is-rounded" style="margin-left:240px;font-size:20px;width:200px;height:50px;">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+    
+<article class="message is-primary" style="width:400px;margin-left:500px;">
+<div class="message-body">
+<p style="font-size:20px;">Followers: <p style="font-size:20px;" id="followers"></p></p>    
+</div>
+</article>
+<article class="message is-danger" style="width:400px;margin-left:500px;">
+<div class="message-body">
+<p style="font-size:20px;">Following: <p style="font-size:20px;" id="following"></p></p>    
+</div>
+</article>
+<br><br><br><br><br>
+
+
+<footer class="page-footer">
+<div class="footer-copyright">
+<div class="container" >
+        Copyright © 2019 Ruqayyah INDIA,Inc. All rights reserved<br>
+        RUQAYYAH(+91 9989151967)  
+        <a class="grey-text text-lighten-4 right" href="https://github.com/RuqayyahSara/battery_status_demo" style="font-size:15px;"><i class="fa fa-github">&nbsp;&nbsp;If you like it, fork it</i></a>
+       <div> <a href="https://twitter.com/RuqayyahMushtaq?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @RuqayyahMushtaq</a></div>     
+</div>
+</div>
+</footer>
+</body>
+
+
+ <script>
+ function getName(username){
+    axios
+    .get('https://api.github.com/users/' + username)
+    .then((res) => {
+       console.log(res.data); 
+       document.getElementById('followers').innerHTML =   res.data.followers;
+       document.getElementById('following').innerHTML =   res.data.following;
+       //console.log(`Followers: ${res.data.followers} Following: ${res.data.following}`);
+    })
+    .catch((err) => {
+        throw err;
+    })
+    .finally(()=>{
+        console.log("Continue search :)");
+    })
+    }
+ </script>
+ <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+</html>
