@@ -13,7 +13,7 @@
 <nav>
 <div class="nav-wrapper" >   
 <a href="#!" class="breadcrumb" style="font-size:30px;">&nbsp;&nbsp;GitHub User Search</a>
-<a href="https://github.com/RuqayyahSara/battery_status_demo" style="margin-left:1020px;font-size: 50px;"><i class="fa fa-github"></i></a>
+<a href="https://github.com/RuqayyahSara" style="margin-left:1020px;font-size: 50px;"><i class="fa fa-github"></i></a>
     </div>
 </nav>   
 <br><br>
@@ -41,19 +41,19 @@
 <p style="font-size:20px;">Following: <p style="font-size:20px;" id="following"></p></p>    
 </div>
 </article>
-<br><br><br><br><br>
+<br><br><br><br>
 
 
-<footer class="page-footer">
+ <footer class="page-footer">
 <div class="footer-copyright">
 <div class="container" >
         Copyright © 2019 Ruqayyah INDIA,Inc. All rights reserved<br>
         RUQAYYAH(+91 9989151967)  
-        <a class="grey-text text-lighten-4 right" href="https://github.com/RuqayyahSara/battery_status_demo" style="font-size:15px;"><i class="fa fa-github">&nbsp;&nbsp;If you like it, fork it</i></a>
+        <a class="grey-text text-lighten-4 right" href="https://github.com/RuqayyahSara/github_api_profile" style="font-size:15px;"><i class="fa fa-github">&nbsp;&nbsp;If you like it, fork it</i></a>
        <div> <a href="https://twitter.com/RuqayyahMushtaq?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @RuqayyahMushtaq</a></div>     
 </div>
 </div>
-</footer>
+</footer> 
 </body>
 
 
@@ -65,7 +65,7 @@
        console.log(res.data); 
        document.getElementById('followers').innerHTML =   res.data.followers;
        document.getElementById('following').innerHTML =   res.data.following;
-       //console.log(`Followers: ${res.data.followers} Following: ${res.data.following}`);
+       console.log(`Followers: ${res.data.followers} Following: ${res.data.following}`);
     })
     .catch((err) => {
         throw err;
@@ -76,5 +76,5 @@
     }
  </script>
  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+ <script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 </html>
